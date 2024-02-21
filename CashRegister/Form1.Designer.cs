@@ -51,6 +51,8 @@
             this.totalOutput = new System.Windows.Forms.Label();
             this.taxOutput = new System.Windows.Forms.Label();
             this.subtotalOutput = new System.Windows.Forms.Label();
+            this.tenderedOutput = new System.Windows.Forms.Label();
+            this.startButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,6 +158,7 @@
             // 
             // tenderedButton
             // 
+            this.tenderedButton.AllowDrop = true;
             this.tenderedButton.AutoSize = true;
             this.tenderedButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenderedButton.Location = new System.Drawing.Point(87, 335);
@@ -164,6 +167,7 @@
             this.tenderedButton.TabIndex = 10;
             this.tenderedButton.Text = "calculate";
             this.tenderedButton.UseVisualStyleBackColor = true;
+            this.tenderedButton.Click += new System.EventHandler(this.tenderedButton_Click);
             // 
             // tenderedLabel
             // 
@@ -268,7 +272,7 @@
             // 
             this.totalOutput.BackColor = System.Drawing.Color.White;
             this.totalOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.totalOutput.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalOutput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalOutput.Location = new System.Drawing.Point(127, 264);
             this.totalOutput.Name = "totalOutput";
             this.totalOutput.Size = new System.Drawing.Size(116, 25);
@@ -278,7 +282,7 @@
             // 
             this.taxOutput.BackColor = System.Drawing.Color.White;
             this.taxOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.taxOutput.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxOutput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taxOutput.Location = new System.Drawing.Point(127, 232);
             this.taxOutput.Name = "taxOutput";
             this.taxOutput.Size = new System.Drawing.Size(116, 25);
@@ -288,11 +292,31 @@
             // 
             this.subtotalOutput.BackColor = System.Drawing.Color.White;
             this.subtotalOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.subtotalOutput.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotalOutput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotalOutput.Location = new System.Drawing.Point(127, 200);
             this.subtotalOutput.Name = "subtotalOutput";
             this.subtotalOutput.Size = new System.Drawing.Size(116, 25);
             this.subtotalOutput.TabIndex = 23;
+            // 
+            // tenderedOutput
+            // 
+            this.tenderedOutput.Location = new System.Drawing.Point(339, 159);
+            this.tenderedOutput.Name = "tenderedOutput";
+            this.tenderedOutput.Size = new System.Drawing.Size(100, 23);
+            this.tenderedOutput.TabIndex = 25;
+            // 
+            // startButton
+            // 
+            this.startButton.BackColor = System.Drawing.Color.White;
+            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(-2, -4);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(808, 383);
+            this.startButton.TabIndex = 26;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = false;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // Form1
             // 
@@ -301,6 +325,8 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(790, 378);
+            this.Controls.Add(this.startButton);
+            this.Controls.Add(this.tenderedOutput);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -333,6 +359,8 @@
         private System.Windows.Forms.Label subtotalOutput;
         private System.Windows.Forms.Label totalOutput;
         private System.Windows.Forms.Label taxOutput;
+        private System.Windows.Forms.Label tenderedOutput;
+        private System.Windows.Forms.Button startButton;
     }
 }
 
