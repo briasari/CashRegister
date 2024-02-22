@@ -254,7 +254,8 @@ namespace CashRegister
             foreach (char c in text)
             {
                 customer1Speech.Text += c;
-                Thread.Sleep(100);
+                Thread.Sleep(50);
+                customer1Speech.Refresh();
             }
         }
     }
