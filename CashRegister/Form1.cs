@@ -11,6 +11,8 @@ using System.Threading; //required to commands like Thread.Sleep();
 using System.Media; //required to use media in properties (audio, etc.)
 
 namespace CashRegister
+
+
 {
     public partial class Form1 : Form
     {
@@ -111,8 +113,28 @@ namespace CashRegister
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            //change first number (colour intensity)
-            startButton.BackColor = Color.FromArgb(225, 255, 255, 255);
+            //change first number(colour intensity)
+            //startButton.BackColor = Color.FromArgb(225, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(200, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(175, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(150, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(125, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(100, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(75, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(50, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(25, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.BackColor = Color.FromArgb(0, 255, 255, 255);
+            //Thread.Sleep(100);
+            //startButton.Visible = false;
 
 
 
@@ -137,6 +159,7 @@ namespace CashRegister
             //Opacity = 0.0;
             //Thread.Sleep(100);
             //startButton.Visible = false;
+            //startButton.Text = "";
             //Opacity = 0.0;
             //Thread.Sleep(100);
             //Opacity = 0.1;
@@ -157,9 +180,82 @@ namespace CashRegister
             //Thread.Sleep(100);
             //Opacity = 0.9;
             //Thread.Sleep(100);
+            //Opacity = 0.95;
+            //Thread.Sleep(100);
             //Opacity = 1.0;
             //Thread.Sleep(100);
 
+            //Thread.Sleep(2000);
+
+            //first customer appears
+            //Opacity = 0.9;
+            //Thread.Sleep(50);
+            //Opacity = 0.8;
+            //Thread.Sleep(50);
+            //Opacity = 0.7;
+            //Thread.Sleep(50);
+            //Opacity = 0.6;
+            //Thread.Sleep(50);
+            //Opacity = 0.5;
+            //Thread.Sleep(50);
+            //Opacity = 0.4;
+            //Thread.Sleep(50);
+            //Opacity = 0.3;
+            //Thread.Sleep(50);
+            //Opacity = 0.2;
+            //Thread.Sleep(50);
+            //Opacity = 0.1;
+            //Thread.Sleep(50);
+            //Opacity = 0.0;
+            //Thread.Sleep(50);
+            customer1.Visible = true;
+            customer1OrderButton.Visible = true;
+            Opacity = 0.0;
+            Thread.Sleep(110);
+            Opacity = 0.1;
+            Thread.Sleep(50);
+            Opacity = 0.2;
+            Thread.Sleep(50);
+            Opacity = 0.3;
+            Thread.Sleep(50);
+            Opacity = 0.4;
+            Thread.Sleep(50);
+            Opacity = 0.5;
+            Thread.Sleep(50);
+            Opacity = 0.6;
+            Thread.Sleep(50);
+            Opacity = 0.7;
+            Thread.Sleep(50);
+            Opacity = 0.8;
+            Thread.Sleep(50);
+            Opacity = 0.9;
+            Thread.Sleep(50);
+            Opacity = 0.95;
+            Thread.Sleep(50);
+            Opacity = 1.0;
+            Thread.Sleep(10);
+
+            //customer1Speech.Parent = customer1;
+            //customer1OrderButton.Parent = customer1;
+
+        }
+
+        private void customer1OrderButton_Click(object sender, EventArgs e)
+        {
+            //customer1Speech.Visible = true;
+            //customer1Speech.Text = "";
+            //customer1Speech.Text = "give me 1x patty,";
+            //customer1Speech.Text += "\n           3x bacon,";
+
+
+            string text = "give me 1x patty";
+
+
+            foreach (char c in text)
+            {
+                customer1Speech.Text += c;
+                Thread.Sleep(100);
+            }
         }
     }
 }

@@ -53,7 +53,11 @@
             this.subtotalOutput = new System.Windows.Forms.Label();
             this.tenderedOutput = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
+            this.customer1 = new System.Windows.Forms.PictureBox();
+            this.customer1OrderButton = new System.Windows.Forms.Button();
+            this.customer1Speech = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customer1)).BeginInit();
             this.SuspendLayout();
             // 
             // pattyLabel
@@ -300,7 +304,7 @@
             // 
             // tenderedOutput
             // 
-            this.tenderedOutput.Location = new System.Drawing.Point(339, 159);
+            this.tenderedOutput.Location = new System.Drawing.Point(443, 3);
             this.tenderedOutput.Name = "tenderedOutput";
             this.tenderedOutput.Size = new System.Drawing.Size(100, 23);
             this.tenderedOutput.TabIndex = 25;
@@ -310,13 +314,47 @@
             this.startButton.BackColor = System.Drawing.Color.White;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(-2, -4);
+            this.startButton.Location = new System.Drawing.Point(-803, -8);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(808, 383);
             this.startButton.TabIndex = 26;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // customer1
+            // 
+            this.customer1.BackColor = System.Drawing.Color.Transparent;
+            this.customer1.Image = ((System.Drawing.Image)(resources.GetObject("customer1.Image")));
+            this.customer1.Location = new System.Drawing.Point(32, -34);
+            this.customer1.Name = "customer1";
+            this.customer1.Size = new System.Drawing.Size(314, 315);
+            this.customer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.customer1.TabIndex = 27;
+            this.customer1.TabStop = false;
+            this.customer1.Visible = false;
+            // 
+            // customer1OrderButton
+            // 
+            this.customer1OrderButton.AutoSize = true;
+            this.customer1OrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customer1OrderButton.Location = new System.Drawing.Point(6, 3);
+            this.customer1OrderButton.Name = "customer1OrderButton";
+            this.customer1OrderButton.Size = new System.Drawing.Size(158, 31);
+            this.customer1OrderButton.TabIndex = 28;
+            this.customer1OrderButton.Text = "click to take order";
+            this.customer1OrderButton.UseVisualStyleBackColor = true;
+            this.customer1OrderButton.Visible = false;
+            this.customer1OrderButton.Click += new System.EventHandler(this.customer1OrderButton_Click);
+            // 
+            // customer1Speech
+            // 
+            this.customer1Speech.BackColor = System.Drawing.Color.White;
+            this.customer1Speech.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customer1Speech.Location = new System.Drawing.Point(261, 71);
+            this.customer1Speech.Name = "customer1Speech";
+            this.customer1Speech.Size = new System.Drawing.Size(192, 60);
+            this.customer1Speech.TabIndex = 26;
             // 
             // Form1
             // 
@@ -325,14 +363,19 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(790, 378);
+            this.Controls.Add(this.customer1Speech);
+            this.Controls.Add(this.customer1OrderButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.tenderedOutput);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.customer1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customer1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,6 +404,9 @@
         private System.Windows.Forms.Label taxOutput;
         private System.Windows.Forms.Label tenderedOutput;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.PictureBox customer1;
+        private System.Windows.Forms.Button customer1OrderButton;
+        private System.Windows.Forms.Label customer1Speech;
     }
 }
 
