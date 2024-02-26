@@ -54,8 +54,9 @@
             this.tenderedOutput = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.customer1 = new System.Windows.Forms.PictureBox();
-            this.customer1OrderButton = new System.Windows.Forms.Button();
             this.customer1Speech = new System.Windows.Forms.Label();
+            this.newOrderButton = new System.Windows.Forms.Button();
+            this.takeOrderButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customer1)).BeginInit();
             this.SuspendLayout();
@@ -236,6 +237,7 @@
             // 
             // tenderedInput
             // 
+            this.tenderedInput.BackColor = System.Drawing.Color.White;
             this.tenderedInput.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenderedInput.Location = new System.Drawing.Point(127, 301);
             this.tenderedInput.Name = "tenderedInput";
@@ -314,7 +316,7 @@
             this.startButton.BackColor = System.Drawing.Color.White;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(-803, -8);
+            this.startButton.Location = new System.Drawing.Point(-710, -8);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(808, 383);
             this.startButton.TabIndex = 26;
@@ -334,27 +336,39 @@
             this.customer1.TabStop = false;
             this.customer1.Visible = false;
             // 
-            // customer1OrderButton
-            // 
-            this.customer1OrderButton.AutoSize = true;
-            this.customer1OrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer1OrderButton.Location = new System.Drawing.Point(6, 3);
-            this.customer1OrderButton.Name = "customer1OrderButton";
-            this.customer1OrderButton.Size = new System.Drawing.Size(158, 31);
-            this.customer1OrderButton.TabIndex = 28;
-            this.customer1OrderButton.Text = "click to take order";
-            this.customer1OrderButton.UseVisualStyleBackColor = true;
-            this.customer1OrderButton.Visible = false;
-            this.customer1OrderButton.Click += new System.EventHandler(this.customer1OrderButton_Click);
-            // 
             // customer1Speech
             // 
             this.customer1Speech.BackColor = System.Drawing.Color.White;
             this.customer1Speech.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer1Speech.Location = new System.Drawing.Point(261, 71);
+            this.customer1Speech.Location = new System.Drawing.Point(261, 40);
             this.customer1Speech.Name = "customer1Speech";
-            this.customer1Speech.Size = new System.Drawing.Size(192, 60);
+            this.customer1Speech.Size = new System.Drawing.Size(192, 161);
             this.customer1Speech.TabIndex = 26;
+            this.customer1Speech.Visible = false;
+            // 
+            // newOrderButton
+            // 
+            this.newOrderButton.AutoSize = true;
+            this.newOrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newOrderButton.Location = new System.Drawing.Point(157, 377);
+            this.newOrderButton.Name = "newOrderButton";
+            this.newOrderButton.Size = new System.Drawing.Size(98, 32);
+            this.newOrderButton.TabIndex = 26;
+            this.newOrderButton.Text = "new order";
+            this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.Click += new System.EventHandler(this.newOrderButton_Click);
+            // 
+            // takeOrderButton
+            // 
+            this.takeOrderButton.AutoSize = true;
+            this.takeOrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.takeOrderButton.Location = new System.Drawing.Point(1, 376);
+            this.takeOrderButton.Name = "takeOrderButton";
+            this.takeOrderButton.Size = new System.Drawing.Size(99, 32);
+            this.takeOrderButton.TabIndex = 28;
+            this.takeOrderButton.Text = "take order";
+            this.takeOrderButton.UseVisualStyleBackColor = true;
+            this.takeOrderButton.Click += new System.EventHandler(this.takeOrderButton_Click);
             // 
             // Form1
             // 
@@ -362,9 +376,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(790, 378);
+            this.ClientSize = new System.Drawing.Size(790, 409);
+            this.Controls.Add(this.takeOrderButton);
+            this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.customer1Speech);
-            this.Controls.Add(this.customer1OrderButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.tenderedOutput);
             this.Controls.Add(this.groupBox1);
@@ -405,8 +420,9 @@
         private System.Windows.Forms.Label tenderedOutput;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.PictureBox customer1;
-        private System.Windows.Forms.Button customer1OrderButton;
         private System.Windows.Forms.Label customer1Speech;
+        private System.Windows.Forms.Button newOrderButton;
+        private System.Windows.Forms.Button takeOrderButton;
     }
 }
 

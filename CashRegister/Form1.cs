@@ -62,6 +62,8 @@ namespace CashRegister
             subtotalOutput.Parent = groupBox1;
             totalOutput.Parent = groupBox1;
 
+            tenderedButton.Enabled = false;
+
         }
 
 
@@ -85,7 +87,24 @@ namespace CashRegister
                 taxOutput.Text = $"{taxAmount.ToString("C")}";
                 totalOutput.Text = $"{totalPrice.ToString("C")}";
                 //.ToString(".00") to make it two decimals
+
+
+                string text = $"give me {numOfPatty}x patty, {numOfBacon}x bacon, {numOfCheese}x cheese, {numOfLettuce}x lettuce, and {numOfTomato}x tomato";
+                customer1Speech.Text = "";
+
+                foreach (char c in text)
+                {
+                    customer1Speech.Text += c;
+                    Thread.Sleep(50);
+                    customer1Speech.Refresh();
+                }
+
+
+                tenderedButton.Enabled = true;
+
+
             }
+
             catch
             {
                 subtotalOutput.Text = "ERROR";
@@ -101,11 +120,27 @@ namespace CashRegister
             {
                 tenderedAmount = Convert.ToInt32(tenderedInput.Text);
                 changeAmount = tenderedAmount - totalPrice;
-                tenderedOutput.Text = $"{changeAmount.ToString("C")}";
+                if (changeAmount >= 0)
+                {
+                    tenderedOutput.Text = $"{changeAmount.ToString("C")}";
+                }
+                else
+                {
+                    tenderedOutput.Text = "ERROR";
+                        
+                }
             }
             catch
             {
-                tenderedOutput.Text = "ERROR";
+                tenderedInput.BackColor = Color.Red;
+                Thread.Sleep(100);
+                tenderedInput.BackColor = Color.White;
+                Thread.Sleep(100);
+                tenderedInput.BackColor = Color.Red;
+                Thread.Sleep(100);
+                tenderedInput.BackColor = Color.White;
+                Thread.Sleep(100);
+
             }
 
         }
@@ -138,78 +173,78 @@ namespace CashRegister
 
 
 
-            //Opacity = 0.9;
-            //Thread.Sleep(100);
-            //Opacity = 0.8;
-            //Thread.Sleep(100);
-            //Opacity = 0.7;
-            //Thread.Sleep(100);
-            //Opacity = 0.6;
-            //Thread.Sleep(100);
-            //Opacity = 0.5;
-            //Thread.Sleep(100);
-            //Opacity = 0.4;
-            //Thread.Sleep(100);
-            //Opacity = 0.3;
-            //Thread.Sleep(100);
-            //Opacity = 0.2;
-            //Thread.Sleep(100);
-            //Opacity = 0.1;
-            //Thread.Sleep(100);
-            //Opacity = 0.0;
-            //Thread.Sleep(100);
-            //startButton.Visible = false;
-            //startButton.Text = "";
-            //Opacity = 0.0;
-            //Thread.Sleep(100);
-            //Opacity = 0.1;
-            //Thread.Sleep(100);
-            //Opacity = 0.2;
-            //Thread.Sleep(100);
-            //Opacity = 0.3;
-            //Thread.Sleep(100);
-            //Opacity = 0.4;
-            //Thread.Sleep(100);
-            //Opacity = 0.5;
-            //Thread.Sleep(100);
-            //Opacity = 0.6;
-            //Thread.Sleep(100);
-            //Opacity = 0.7;
-            //Thread.Sleep(100);
-            //Opacity = 0.8;
-            //Thread.Sleep(100);
-            //Opacity = 0.9;
-            //Thread.Sleep(100);
-            //Opacity = 0.95;
-            //Thread.Sleep(100);
-            //Opacity = 1.0;
-            //Thread.Sleep(100);
+            Opacity = 0.9;
+            Thread.Sleep(100);
+            Opacity = 0.8;
+            Thread.Sleep(100);
+            Opacity = 0.7;
+            Thread.Sleep(100);
+            Opacity = 0.6;
+            Thread.Sleep(100);
+            Opacity = 0.5;
+            Thread.Sleep(100);
+            Opacity = 0.4;
+            Thread.Sleep(100);
+            Opacity = 0.3;
+            Thread.Sleep(100);
+            Opacity = 0.2;
+            Thread.Sleep(100);
+            Opacity = 0.1;
+            Thread.Sleep(100);
+            Opacity = 0.0;
+            Thread.Sleep(100);
+            startButton.Visible = false;
+            startButton.Text = "";
+            Opacity = 0.0;
+            Thread.Sleep(100);
+            Opacity = 0.1;
+            Thread.Sleep(100);
+            Opacity = 0.2;
+            Thread.Sleep(100);
+            Opacity = 0.3;
+            Thread.Sleep(100);
+            Opacity = 0.4;
+            Thread.Sleep(100);
+            Opacity = 0.5;
+            Thread.Sleep(100);
+            Opacity = 0.6;
+            Thread.Sleep(100);
+            Opacity = 0.7;
+            Thread.Sleep(100);
+            Opacity = 0.8;
+            Thread.Sleep(100);
+            Opacity = 0.9;
+            Thread.Sleep(100);
+            Opacity = 0.95;
+            Thread.Sleep(100);
+            Opacity = 1.0;
+            Thread.Sleep(100);
 
-            //Thread.Sleep(2000);
+            Thread.Sleep(2000);
 
             //first customer appears
-            //Opacity = 0.9;
-            //Thread.Sleep(50);
-            //Opacity = 0.8;
-            //Thread.Sleep(50);
-            //Opacity = 0.7;
-            //Thread.Sleep(50);
-            //Opacity = 0.6;
-            //Thread.Sleep(50);
-            //Opacity = 0.5;
-            //Thread.Sleep(50);
-            //Opacity = 0.4;
-            //Thread.Sleep(50);
-            //Opacity = 0.3;
-            //Thread.Sleep(50);
-            //Opacity = 0.2;
-            //Thread.Sleep(50);
-            //Opacity = 0.1;
-            //Thread.Sleep(50);
-            //Opacity = 0.0;
-            //Thread.Sleep(50);
+            Opacity = 0.9;
+            Thread.Sleep(50);
+            Opacity = 0.8;
+            Thread.Sleep(50);
+            Opacity = 0.7;
+            Thread.Sleep(50);
+            Opacity = 0.6;
+            Thread.Sleep(50);
+            Opacity = 0.5;
+            Thread.Sleep(50);
+            Opacity = 0.4;
+            Thread.Sleep(50);
+            Opacity = 0.3;
+            Thread.Sleep(50);
+            Opacity = 0.2;
+            Thread.Sleep(50);
+            Opacity = 0.1;
+            Thread.Sleep(50);
+            Opacity = 0.0;
+            Thread.Sleep(50);
             customer1.Visible = true;
-            customer1OrderButton.Visible = true;
+            customer1Speech.Visible = true;
             Opacity = 0.0;
             Thread.Sleep(110);
             Opacity = 0.1;
@@ -235,21 +270,24 @@ namespace CashRegister
             Opacity = 1.0;
             Thread.Sleep(10);
 
-            //customer1Speech.Parent = customer1;
-            //customer1OrderButton.Parent = customer1;
 
         }
 
-        private void customer1OrderButton_Click(object sender, EventArgs e)
+        private void newOrderButton_Click(object sender, EventArgs e)
         {
-            //customer1Speech.Visible = true;
-            //customer1Speech.Text = "";
-            //customer1Speech.Text = "give me 1x patty,";
-            //customer1Speech.Text += "\n           3x bacon,";
+            double subtotal;
+            double taxAmount;
+            double totalPrice;
+            double tenderedAmount;
+            double changeAmount;
 
 
-            string text = "give me 1x patty";
+        }
 
+        private void takeOrderButton_Click(object sender, EventArgs e)
+        {
+            string text = $"give me {numOfPatty}x patty, {numOfBacon}x bacon, {numOfCheese}x cheese, {numOfLettuce}x lettuce, and {numOfTomato}x tomato";
+            customer1Speech.Text = "";
 
             foreach (char c in text)
             {
