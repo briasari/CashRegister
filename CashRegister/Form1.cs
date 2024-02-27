@@ -295,7 +295,7 @@ namespace CashRegister
                 customer1Speech.Refresh();
             }
         }
-
+         
         private void receiptButton_Click(object sender, EventArgs e)
         {
             if (tenderedAmount <= totalPrice)
