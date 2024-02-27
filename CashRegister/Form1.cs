@@ -55,12 +55,12 @@ namespace CashRegister
 
             InitializeComponent();
 
-            patty1Num = randGen.Next(1,20);
-            bacon1Num = randGen.Next(1,20);
-            cheese1Num = randGen.Next(1,20);
-            lettuce1Num = randGen.Next(1,20);
-            tomato1Num = randGen.Next(1,20);
-            rat1Num = randGen.Next(1,20);
+            patty1Num = randGen.Next(1, 20);
+            bacon1Num = randGen.Next(1, 20);
+            cheese1Num = randGen.Next(1, 20);
+            lettuce1Num = randGen.Next(1, 20);
+            tomato1Num = randGen.Next(1, 20);
+            rat1Num = randGen.Next(1, 20);
 
             //parenting register interface to groupbox (all put on group box)
             pattyLabel.Parent = groupBox1;
@@ -137,7 +137,7 @@ namespace CashRegister
                 else
                 {
                     tenderedOutput.Text = "ERROR";
-                        
+
                 }
             }
             catch
@@ -165,7 +165,7 @@ namespace CashRegister
             //change first number(colour intensity)
             //startButton.BackColor = Color.FromArgb(225, 255, 255, 255);
             //Thread.Sleep(100);
-            
+
             Opacity = 0.9;
             Thread.Sleep(100);
             Opacity = 0.8;
@@ -275,6 +275,12 @@ namespace CashRegister
             taxOutput.Text = $"";
             totalOutput.Text = $"";
 
+            pattyInput.Text = "";
+            lettuceInput.Text = "";
+            tomatoInput.Text = "";
+            cheeseInput.Text = "";
+            baconInput.Text = "";
+
         }
 
         private void takeOrderButton_Click(object sender, EventArgs e)
@@ -292,21 +298,32 @@ namespace CashRegister
 
         private void receiptButton_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
-            tenderedOutput.Visible = false;
-            receiptGroupBox.Visible = true;
-            receiptTextLabel.Visible = true;
-            Refresh();
-
-            string receipt = $"happy burger\ni'm lovin' it (more)\n\n#product\n {patty1Num}                      {pattyPrice * numOfPatty}\n {bacon1Num}                      {baconPrice * numOfBacon}\n {lettuce1Num}                       {lettucePrice * numOfLettuce}\n {cheese1Num}                       {cheesePrice * numOfCheese}\n {tomato1Num}                      {tomatoPrice * numOfTomato}";
-
-            foreach (char c in receipt)
+            if (tenderedAmount <= totalPrice)
             {
-                receiptTextLabel.Text += c;
-                Thread.Sleep(50);
-                receiptTextLabel.Refresh();
+                tenderedInput.Text = "not enough";
             }
+            else
+            {
+                groupBox1.Visible = false;
+                tenderedOutput.Visible = false;
+                receiptGroupBox.Visible = true;
+                receiptTextLabel.Visible = true;
+                Refresh();
 
+                SoundPlayer print = new SoundPlayer(Properties.Resources.print);
+                print.Play();
+                print.Play();
+
+                string receipt = $"\nhappy burger\ni'm lovin' it (more)\n\n#product\n{patty1Num}                      {pattyPrice * numOfPatty}\n{bacon1Num}                      {baconPrice * numOfBacon}\n{lettuce1Num}                       {lettucePrice * numOfLettuce}\n{cheese1Num}                       {cheesePrice * numOfCheese}\n{tomato1Num}                      {tomatoPrice * numOfTomato}";
+
+                foreach (char c in receipt)
+                {
+                    receiptTextLabel.Text += c;
+                    Thread.Sleep(50);
+                    receiptTextLabel.Refresh();
+                }
+
+            }
         }
     }
 }
