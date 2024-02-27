@@ -55,6 +55,7 @@ namespace CashRegister
 
             InitializeComponent();
 
+            //telling program that [item]1num = random number between 1 and 20
             patty1Num = randGen.Next(1, 20);
             bacon1Num = randGen.Next(1, 20);
             cheese1Num = randGen.Next(1, 20);
@@ -76,9 +77,11 @@ namespace CashRegister
             subtotalOutput.Parent = groupBox1;
             totalOutput.Parent = groupBox1;
 
+            //hiding receipt (couldn't click it so i just did it in code)
             receiptTextLabel.Parent = receiptGroupBox;
             receiptGroupBox.Visible = false;
 
+            //disabled other buttons
             tenderedButton.Enabled = false;
             takeOrderButton.Enabled = false;
             receiptButton.Enabled = false;
@@ -106,10 +109,9 @@ namespace CashRegister
                 subtotalOutput.Text = $"{subtotal.ToString("C")}";
                 taxOutput.Text = $"{taxAmount.ToString("C")}";
                 totalOutput.Text = $"{totalPrice.ToString("C")}";
-                //.ToString(".00") to make it two decimals
+                //.ToString(".00") to make it two decimals; "C" for currency of whatever country user is in
 
                 tenderedButton.Enabled = true;
-
 
             }
 
@@ -142,15 +144,8 @@ namespace CashRegister
             }
             catch
             {
-                tenderedInput.BackColor = Color.Red;
-                Thread.Sleep(100);
-                tenderedInput.BackColor = Color.White;
-                Thread.Sleep(100);
-                tenderedInput.BackColor = Color.Red;
-                Thread.Sleep(100);
-                tenderedInput.BackColor = Color.White;
-                Thread.Sleep(100);
-
+                //else statement took over for this
+                tenderedOutput.Text = "ERROR";
             }
 
             receiptButton.Enabled = true;
@@ -271,16 +266,23 @@ namespace CashRegister
         {
             groupBox1.Visible = true;
             receiptGroupBox.Visible = false;
+            //cash groupbox visible, receipt groupbox hidden
+
             subtotalOutput.Text = $"";
             taxOutput.Text = $"";
             totalOutput.Text = $"";
-
             pattyInput.Text = "";
             lettuceInput.Text = "";
             tomatoInput.Text = "";
             cheeseInput.Text = "";
             baconInput.Text = "";
+            //clearing text boxes
 
+            int numOfPatty;
+            int numOfBacon;
+            int numOfCheese;
+            int numOfLettuce;
+            int numOfTomato;
         }
 
         private void takeOrderButton_Click(object sender, EventArgs e)
@@ -313,6 +315,7 @@ namespace CashRegister
                 SoundPlayer print = new SoundPlayer(Properties.Resources.print);
                 print.Play();
                 print.Play();
+                //made soundplayer, played sound twice because it wasn't long enough (could've found a longer audio clip)
 
                 string receipt = $"\nhappy burger\ni'm lovin' it (more)\n\n#product\n{patty1Num}                      {pattyPrice * numOfPatty}\n{bacon1Num}                      {baconPrice * numOfBacon}\n{lettuce1Num}                       {lettucePrice * numOfLettuce}\n{cheese1Num}                       {cheesePrice * numOfCheese}\n{tomato1Num}                      {tomatoPrice * numOfTomato}";
 
