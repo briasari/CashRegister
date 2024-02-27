@@ -282,6 +282,12 @@ namespace CashRegister
             baconInput.Text = "";
             //clearing text boxes
 
+            //disabled other buttons
+            tenderedButton.Enabled = false;
+            takeOrderButton.Enabled = false;
+            receiptButton.Enabled = false;
+            resetButton.Enabled = false;
+
             int numOfPatty;
             int numOfBacon;
             int numOfCheese;
