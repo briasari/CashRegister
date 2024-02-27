@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Threading; //required to commands like Thread.Sleep();
 using System.Media; //required to use media in properties (audio, etc.)
 
+//currently no reprecussion for getting order wrong
+
 namespace CashRegister
     
 
@@ -268,6 +270,8 @@ namespace CashRegister
             receiptGroupBox.Visible = false;
             //cash groupbox visible, receipt groupbox hidden
 
+            tenderedOutput.Text = "";
+            tenderedInput.Text = "";
             subtotalOutput.Text = $"";
             taxOutput.Text = $"";
             totalOutput.Text = $"";
@@ -317,7 +321,7 @@ namespace CashRegister
                 print.Play();
                 //made soundplayer, played sound twice because it wasn't long enough (could've found a longer audio clip)
 
-                string receipt = $"\nhappy burger\ni'm lovin' it (more)\n\n#product\n{patty1Num}                      {pattyPrice * numOfPatty}\n{bacon1Num}                      {baconPrice * numOfBacon}\n{lettuce1Num}                       {lettucePrice * numOfLettuce}\n{cheese1Num}                       {cheesePrice * numOfCheese}\n{tomato1Num}                      {tomatoPrice * numOfTomato}";
+                string receipt = $"\n\nhappy burger\ni'm lovin' it (more)\n\n\n\n#product\n{patty1Num}                      {pattyPrice * numOfPatty}\n{bacon1Num}                      {baconPrice * numOfBacon}\n{lettuce1Num}                       {lettucePrice * numOfLettuce}\n{cheese1Num}                       {cheesePrice * numOfCheese}\n{tomato1Num}                      {tomatoPrice * numOfTomato}";
 
                 foreach (char c in receipt)
                 {
