@@ -11,6 +11,7 @@ using System.Threading; //required to commands like Thread.Sleep();
 using System.Media; //required to use media in properties (audio, etc.)
 
 //currently no reprecussion for getting order wrong
+//rat hasn't been added yet
 
 namespace CashRegister
     
@@ -88,7 +89,6 @@ namespace CashRegister
             takeOrderButton.Enabled = false;
             receiptButton.Enabled = false;
             resetButton.Enabled = false;
-
         }
 
 
@@ -259,8 +259,6 @@ namespace CashRegister
             Thread.Sleep(50);
             Opacity = 1.0;
             Thread.Sleep(10);
-
-
         }
 
 
