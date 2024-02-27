@@ -55,10 +55,14 @@
             this.startButton = new System.Windows.Forms.Button();
             this.customer1 = new System.Windows.Forms.PictureBox();
             this.customer1Speech = new System.Windows.Forms.Label();
-            this.newOrderButton = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             this.takeOrderButton = new System.Windows.Forms.Button();
+            this.receiptButton = new System.Windows.Forms.Button();
+            this.receiptGroupBox = new System.Windows.Forms.GroupBox();
+            this.receiptTextLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customer1)).BeginInit();
+            this.receiptGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // pattyLabel
@@ -306,7 +310,7 @@
             // 
             // tenderedOutput
             // 
-            this.tenderedOutput.Location = new System.Drawing.Point(443, 3);
+            this.tenderedOutput.Location = new System.Drawing.Point(460, 3);
             this.tenderedOutput.Name = "tenderedOutput";
             this.tenderedOutput.Size = new System.Drawing.Size(100, 23);
             this.tenderedOutput.TabIndex = 25;
@@ -316,9 +320,9 @@
             this.startButton.BackColor = System.Drawing.Color.White;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startButton.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(-710, -8);
+            this.startButton.Location = new System.Drawing.Point(-2, -8);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(808, 383);
+            this.startButton.Size = new System.Drawing.Size(808, 429);
             this.startButton.TabIndex = 26;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
@@ -346,17 +350,17 @@
             this.customer1Speech.TabIndex = 26;
             this.customer1Speech.Visible = false;
             // 
-            // newOrderButton
+            // resetButton
             // 
-            this.newOrderButton.AutoSize = true;
-            this.newOrderButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newOrderButton.Location = new System.Drawing.Point(157, 377);
-            this.newOrderButton.Name = "newOrderButton";
-            this.newOrderButton.Size = new System.Drawing.Size(98, 32);
-            this.newOrderButton.TabIndex = 26;
-            this.newOrderButton.Text = "new order";
-            this.newOrderButton.UseVisualStyleBackColor = true;
-            this.newOrderButton.Click += new System.EventHandler(this.newOrderButton_Click);
+            this.resetButton.AutoSize = true;
+            this.resetButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(157, 377);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(103, 32);
+            this.resetButton.TabIndex = 26;
+            this.resetButton.Text = "reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.newOrderButton_Click);
             // 
             // takeOrderButton
             // 
@@ -370,6 +374,38 @@
             this.takeOrderButton.UseVisualStyleBackColor = true;
             this.takeOrderButton.Click += new System.EventHandler(this.takeOrderButton_Click);
             // 
+            // receiptButton
+            // 
+            this.receiptButton.AutoSize = true;
+            this.receiptButton.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptButton.Location = new System.Drawing.Point(313, 377);
+            this.receiptButton.Name = "receiptButton";
+            this.receiptButton.Size = new System.Drawing.Size(113, 32);
+            this.receiptButton.TabIndex = 29;
+            this.receiptButton.Text = "print receipt";
+            this.receiptButton.UseVisualStyleBackColor = true;
+            this.receiptButton.Click += new System.EventHandler(this.receiptButton_Click);
+            // 
+            // receiptGroupBox
+            // 
+            this.receiptGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.receiptGroupBox.Controls.Add(this.receiptTextLabel);
+            this.receiptGroupBox.Location = new System.Drawing.Point(526, 3);
+            this.receiptGroupBox.Name = "receiptGroupBox";
+            this.receiptGroupBox.Size = new System.Drawing.Size(261, 372);
+            this.receiptGroupBox.TabIndex = 26;
+            this.receiptGroupBox.TabStop = false;
+            // 
+            // receiptTextLabel
+            // 
+            this.receiptTextLabel.BackColor = System.Drawing.Color.Transparent;
+            this.receiptTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receiptTextLabel.Location = new System.Drawing.Point(3, 0);
+            this.receiptTextLabel.Name = "receiptTextLabel";
+            this.receiptTextLabel.Size = new System.Drawing.Size(258, 372);
+            this.receiptTextLabel.TabIndex = 0;
+            this.receiptTextLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,18 +413,21 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(790, 409);
-            this.Controls.Add(this.takeOrderButton);
-            this.Controls.Add(this.newOrderButton);
-            this.Controls.Add(this.customer1Speech);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.tenderedOutput);
+            this.Controls.Add(this.receiptGroupBox);
+            this.Controls.Add(this.receiptButton);
+            this.Controls.Add(this.takeOrderButton);
+            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.customer1Speech);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.customer1);
+            this.Controls.Add(this.tenderedOutput);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customer1)).EndInit();
+            this.receiptGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,8 +460,11 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.PictureBox customer1;
         private System.Windows.Forms.Label customer1Speech;
-        private System.Windows.Forms.Button newOrderButton;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button takeOrderButton;
+        private System.Windows.Forms.Button receiptButton;
+        private System.Windows.Forms.GroupBox receiptGroupBox;
+        private System.Windows.Forms.Label receiptTextLabel;
     }
 }
 

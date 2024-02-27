@@ -42,11 +42,25 @@ namespace CashRegister
         double tenderedAmount;
         double changeAmount;
 
-
+        Random randGen = new Random();
+        int patty1Num;
+        int bacon1Num;
+        int cheese1Num;
+        int lettuce1Num;
+        int tomato1Num;
+        int rat1Num;
 
         public Form1()
         {
+
             InitializeComponent();
+
+            patty1Num = randGen.Next(1,20);
+            bacon1Num = randGen.Next(1,20);
+            cheese1Num = randGen.Next(1,20);
+            lettuce1Num = randGen.Next(1,20);
+            tomato1Num = randGen.Next(1,20);
+            rat1Num = randGen.Next(1,20);
 
             //parenting register interface to groupbox (all put on group box)
             pattyLabel.Parent = groupBox1;
@@ -62,7 +76,13 @@ namespace CashRegister
             subtotalOutput.Parent = groupBox1;
             totalOutput.Parent = groupBox1;
 
+            receiptTextLabel.Parent = receiptGroupBox;
+            receiptGroupBox.Visible = false;
+
             tenderedButton.Enabled = false;
+            takeOrderButton.Enabled = false;
+            receiptButton.Enabled = false;
+            resetButton.Enabled = false;
 
         }
 
@@ -88,18 +108,6 @@ namespace CashRegister
                 totalOutput.Text = $"{totalPrice.ToString("C")}";
                 //.ToString(".00") to make it two decimals
 
-
-                string text = $"give me {numOfPatty}x patty, {numOfBacon}x bacon, {numOfCheese}x cheese, {numOfLettuce}x lettuce, and {numOfTomato}x tomato";
-                customer1Speech.Text = "";
-
-                foreach (char c in text)
-                {
-                    customer1Speech.Text += c;
-                    Thread.Sleep(50);
-                    customer1Speech.Refresh();
-                }
-
-
                 tenderedButton.Enabled = true;
 
 
@@ -111,6 +119,8 @@ namespace CashRegister
                 taxOutput.Text = string.Empty;
                 totalOutput.Text = string.Empty;
             }
+
+            resetButton.Enabled = true;
 
         }
 
@@ -143,36 +153,19 @@ namespace CashRegister
 
             }
 
+            receiptButton.Enabled = true;
+
         }
 
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            takeOrderButton.Enabled = true;
+
             //change first number(colour intensity)
             //startButton.BackColor = Color.FromArgb(225, 255, 255, 255);
             //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(200, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(175, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(150, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(125, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(100, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(75, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(50, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(25, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.BackColor = Color.FromArgb(0, 255, 255, 255);
-            //Thread.Sleep(100);
-            //startButton.Visible = false;
-
-
-
+            
             Opacity = 0.9;
             Thread.Sleep(100);
             Opacity = 0.8;
@@ -273,20 +266,20 @@ namespace CashRegister
 
         }
 
+
         private void newOrderButton_Click(object sender, EventArgs e)
         {
-            double subtotal;
-            double taxAmount;
-            double totalPrice;
-            double tenderedAmount;
-            double changeAmount;
-
+            groupBox1.Visible = true;
+            receiptGroupBox.Visible = false;
+            subtotalOutput.Text = $"";
+            taxOutput.Text = $"";
+            totalOutput.Text = $"";
 
         }
 
         private void takeOrderButton_Click(object sender, EventArgs e)
         {
-            string text = $"give me {numOfPatty}x patty, {numOfBacon}x bacon, {numOfCheese}x cheese, {numOfLettuce}x lettuce, and {numOfTomato}x tomato";
+            string text = $"give me {patty1Num}x patty, {bacon1Num}x bacon, {lettuce1Num}x lettuce, {cheese1Num}x cheese, and {tomato1Num}x tomato";
             customer1Speech.Text = "";
 
             foreach (char c in text)
@@ -295,6 +288,25 @@ namespace CashRegister
                 Thread.Sleep(50);
                 customer1Speech.Refresh();
             }
+        }
+
+        private void receiptButton_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+            tenderedOutput.Visible = false;
+            receiptGroupBox.Visible = true;
+            receiptTextLabel.Visible = true;
+            Refresh();
+
+            string receipt = $"happy burger\ni'm lovin' it (more)\n\n#product\n {patty1Num}                      {pattyPrice * numOfPatty}\n {bacon1Num}                      {baconPrice * numOfBacon}\n {lettuce1Num}                       {lettucePrice * numOfLettuce}\n {cheese1Num}                       {cheesePrice * numOfCheese}\n {tomato1Num}                      {tomatoPrice * numOfTomato}";
+
+            foreach (char c in receipt)
+            {
+                receiptTextLabel.Text += c;
+                Thread.Sleep(50);
+                receiptTextLabel.Refresh();
+            }
+
         }
     }
 }
