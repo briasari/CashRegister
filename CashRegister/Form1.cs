@@ -11,7 +11,7 @@ using System.Threading; //required to commands like Thread.Sleep();
 using System.Media; //required to use media in properties (audio, etc.)
 
 namespace CashRegister
-
+    
 
 {
     public partial class Form1 : Form
